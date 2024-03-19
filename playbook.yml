@@ -3,6 +3,9 @@
   hosts: all
   become: true
   tasks:
+    - name: Update apt package cache
+      apt:
+        update_cache: yes
     - name: Install MySQL server
       apt:
         name: mysql-server
